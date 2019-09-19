@@ -1,0 +1,17 @@
+{
+  "name": "Atlassian-APIs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "g:api:jira-cloud-platform": "rm -Rf ./jira-cloud-platform/api && openapi-generator generate -i ./jira-cloud-platform/jira-cloud-platform-swagger.v3.json -g typescript-node -o ./jira-cloud-platform/api -c ./jira-cloud-platform/openapi-generator.config.yaml",
+    "g:api:jira-cloud-platform:validate": "openapi-generator validate -i https://developer.atlassian.com/cloud/jira/platform/swagger.v3.json",
+    "g:api:jira-cloud-software": "rm -Rf ./jira-cloud-software/api && openapi-generator generate -i ./jira-cloud-software/jira-cloud-software-swagger.v3.json -g typescript-node -o ./jira-cloud-software/api",
+    "g:api:bitbucket-cloud": "rm -Rf ./bitbucket-cloud/api && openapi-generator generate -i ./bitbucket-cloud/bitbucket-cloud-swagger.v3.json -g typescript-node -o ./bitbucket-cloud/api --skip-validate-spec",
+    "openapi-generator": "openapi-generator"
+  },
+  "devDependencies": {
+    "@openapitools/openapi-generator-cli": "^0.0.19-4.1.2"
+  },
+  "dependencies": {}
+}
