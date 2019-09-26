@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "g:api:all": "yarn g:api:jira-cloud-platform && yarn g:api:jira-cloud-software && yarn g:api:bitbucket-cloud",
     "g:api:jira-cloud-platform": "rm -Rf ./jira-cloud-platform/api && openapi-generator generate -i ./jira-cloud-platform/jira-cloud-platform-swagger.v3.json -g typescript-node -o ./jira-cloud-platform/api -c ./jira-cloud-platform/openapi-generator.config.yaml",
     "g:api:jira-cloud-platform:validate": "openapi-generator validate -i https://developer.atlassian.com/cloud/jira/platform/swagger.v3.json",
     "g:api:jira-cloud-software": "rm -Rf ./jira-cloud-software/api && openapi-generator generate -i ./jira-cloud-software/jira-cloud-software-swagger.v3.json -g typescript-node -o ./jira-cloud-software/api",
